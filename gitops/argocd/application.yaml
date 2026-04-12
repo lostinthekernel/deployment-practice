@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/alfredops/go-web-app-devops
+    repoURL: https://github.com/lostinthekernel/go-web-app-devops
     targetRevision: HEAD
     path: helm/go-web-app-chart
   destination:
