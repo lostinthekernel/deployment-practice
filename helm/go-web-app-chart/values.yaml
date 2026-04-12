@@ -1,0 +1,37 @@
+replicaCount: 1
+
+image:
+  repository: alfredops/go-web-app   # 🔁 replace with your DockerHub repo if needed
+  pullPolicy: IfNotPresent
+  tag: "10016307834"
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true                # ✅ enable ingress
+
+  className: nginx             # ✅ connect to nginx ingress controller
+
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+
+  hosts:
+    - host: ""                 # ✅ empty → access via ELB directly
+      paths:
+        - path: /
+          pathType: Prefix
+
+  tls: []                      # (keep empty for now, no HTTPS yet)
+
+resources: {}
+
+autoscaling:
+  enabled: false
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
