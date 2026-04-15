@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: alfredops/go-web-app   # 🔁 replace with your DockerHub repo if needed
   pullPolicy: IfNotPresent
-  tag: "24351373934"
+  tag: "24444076928"
 
 service:
   type: ClusterIP
